@@ -17,6 +17,15 @@ class Snake:
             new_turtle.color("white")
             new_turtle.goto(STARTING_POSITIONS[i])
             self.segments.append(new_turtle)
+
+    def increaseSnake(self):
+        new_turtle = Turtle(shape = "square")
+        new_turtle.penup()
+        new_turtle.color("white")
+        new_turtle.goto(self.segments[0].xcor(), self.segments[0].ycor())
+        self.segments.append(new_turtle)
+
+    
         
     def move(self):
         for seg_number in range(len(self.segments)-1, 0, -1):
